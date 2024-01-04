@@ -25,71 +25,58 @@ defineProps({
 
 
     <div
-        class="relative min-h-screen bg-dots-darker bg-center bg-orange-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white ">
+        class="relative min-h-screen bg-dots-darker dark:bg-dots-lighter dark:bg-gray-900 selection:text-white bg-center bg-cover bg-no-repeat bg-[url('https://cdn.motor1.com/images/mgl/2o0Z4/s3/cover.jpg')] bg-gray-700 bg-blend-multiply h-screen">
 
-        <div class="sm:flex sm:justify-between sm:items-center bg-yellow-950 p-4">
+        <div class="flex justify-between items-center bg-primary p-4">
             <!-- Logo -->
-            <div class="flex items-center mb-4 sm:mb-0">
+            <div class="flex items-center">
                 <ApplicationLogo class="w-12 h-12" /> <!-- Ajusta el tamaño según tus necesidades -->
             </div>
 
             <!-- Navbar (Login y Register) -->
-            <div v-if="canLogin" class="sm:ml-auto text-end">
+            <div v-if="canLogin" class="ml-auto text-end">
                 <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-                    class="font-semibold text-orange-100 hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm ">
+                    class="font-semibold text-cuarty hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm ">
                 Dashboard
                 </Link>
 
                 <template v-else>
                     <Link :href="route('login')"
-                        class="font-semibold text-orange-100 hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm">
-                    Log in
+                        class="font-semibold text-cuarty hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm">
+                    Entrar
                     </Link>
 
                     <Link v-if="canRegister" :href="route('register')"
-                        class="ms-4 font-semibold text-orange-100 hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm">
-                    Register
+                        class="ms-4 font-semibold text-cuarty hover:text-orange-300 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-1 focus:rounded-sm">
+                    Registro
                     </Link>
                 </template>
             </div>
         </div>
 
         <!-- Contenido adicional -->
-        <div class="flex text-center p-4">
-            <!-- --------------- -->
-            <div class="w-full max-w-xs">
-                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                            Moto
-                        </label>
-                        <input
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="username" type="text" placeholder="Kawasaki">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                            Modelo
-                        </label>
-                        <input
-                            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password" type="text" placeholder="Ninja">
-                    </div>
-                    <div class="flex items-center justify-center">
-                            <button
-                                class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                                type="button">
-                                Sign Up
-                            </button>
-                    </div>
-                </form>
-            </div>
-            <!-- ---------------- -->
-            <div class="w-1/2 p-4">
-                <h1>Hola Mundo</h1>
-            </div>
+        <section>
+            <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-normal text-cuarty md:text-5xl lg:text-6xl">Conectando Pasiones, Reparando Historias</h1>
+                <p class="mb-8 text-lg font-normal leading-normal text-terciary lg:text-xl sm:px-16 lg:px-48">Encuentra tu Moto, Descubre sus Secretos, y Rueda hacia Soluciones
+                </p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-cuarty rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                        Comenzar
+                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-terciary rounded-lg border border-cuarty hover:bg-secondary hover:text-cuarty focus:ring-4 focus:ring-gray-400">
+                        Entra
+                    </a>
+                </div>
         </div>
+    </section>
 
-    </div>
-</template>
+</div></template>
 
